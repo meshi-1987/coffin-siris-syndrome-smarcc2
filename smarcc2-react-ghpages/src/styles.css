@@ -1,0 +1,62 @@
+:root {
+  --bg: #0b1020;
+  --card: #121933;
+  --muted: #8aa0ff;
+  --text: #e6ecff;
+  --accent: #6ad1ff;
+  --accent-2: #b8ffcb;
+  --warning: #ffd166;
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+  color: var(--text);
+  background: radial-gradient(1000px 600px at 80% -200px, rgba(133, 128, 255, .18), transparent 60%),
+              radial-gradient(1200px 700px at -200px 20%, rgba(39, 194, 255, .18), transparent 60%),
+              var(--bg);
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+header.nav {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: blur(8px);
+  background: rgba(10, 16, 34, .6);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav-inner { display: flex; align-items: center; gap: 18px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .3px; }
+.brand img { width: 28px; height: 28px; }
+.spacer { flex: 1; }
+.nav a { padding: 10px 12px; border-radius: 12px; }
+.nav a.active { background: rgba(255,255,255,.08); }
+main { padding-top: 20px; }
+.grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px; border: 0; cursor: pointer; user-select: none;
+  padding: 12px 16px; border-radius: 12px; font-weight: 600;
+  background: linear-gradient(180deg, var(--accent), #4fbde6);
+  color: #04121b;
+}
+.btn.secondary { background: linear-gradient(180deg, #cfd7ff, #a8b6ff); }
+.btn.disabled { opacity: .6; cursor: not-allowed; }
+.hero {
+  display: grid; gap: 16px; align-items: center;
+  grid-template-columns: 1.2fr .8fr;
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+}
+.muted { color: #cbd6ff; opacity: .9; }
+footer { border-top: 1px solid rgba(255,255,255,.08); margin-top: 40px; }
+.small { font-size: 13px; opacity: .8; }
